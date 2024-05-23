@@ -1,0 +1,62 @@
+form {
+    width: 100%;
+    max-width: 700px;
+
+    border: 1px solid #001128;
+    border-radius: 15px;
+
+    padding: 25px;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+label {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+    width: 100%;
+    border: 1px solid #001128 !important;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 25px;
+}
+
+option {
+    font-family: 'Karla', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+input[type='file'] {
+    margin-bottom: 25px;
+}
+
+.text-limit {
+    font-size: 13px !important;
+    font-weight: normal;
+}
+
+input[type='submit'] {
+    padding: 10px 15px;
+    color: white;
+    background-color: #23a47d;
+    font-size: 15px;
+    border-radius: 6px;
+    margin-top: 25px;
+}
+
+#more-info {
+    height: 120px;
+}

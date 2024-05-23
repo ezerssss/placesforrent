@@ -1,0 +1,42 @@
+h1 {
+    font-size: 40px;
+    margin-bottom: 23px;
+}
+
+h1 + p {
+    max-width: 400px;
+    margin: auto;
+}
+
+form {
+    margin: 77px auto;
+    width: 376px;
+}
+
+form > * + * {
+    margin-top: 46px;
+}
+
+form p {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+form input {
+    color: #e0eeff !important;
+    background-color: #001128 !important;
+    padding: 18px 20px;
+    border-radius: 10px;
+
+    width: 100%;
+}
+
+@media only screen and (max-width: 850px) {
+    form {
+        width: 100%;
+    }
+}
+
+form input::placeholder {
+    color: #e0eeff;
+}

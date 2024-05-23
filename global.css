@@ -1,0 +1,174 @@
+/* Utils */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.league-spartan {
+    font-family: 'League Spartan', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.league-spartan-bold {
+    font-family: 'League Spartan', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.karla {
+    font-family: 'Karla', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.karla-bold {
+    font-family: 'Karla', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.gray {
+    color: #8f8f8f;
+}
+
+/* End Utils */
+
+/* Default Styling */
+
+body {
+    padding: 60px 150px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 60px 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        padding: 60px 50px 20px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button,
+input[type='button'],
+input[type='submit'] {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'],
+textarea {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.text-logo {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.socials a {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.socials a img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+/* End Default Styling */
+
+/* Navbar */
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'League Spartan', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav .links {
+    display: flex;
+    gap: 30px;
+
+    font-size: 18px;
+}
+/* End Navbar */
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    footer div + div {
+        text-align: left !important;
+    }
+
+    .socials {
+        justify-content: flex-start;
+    }
+}
+
+footer .slogan {
+    margin-top: 13px;
+    max-width: 350px;
+}

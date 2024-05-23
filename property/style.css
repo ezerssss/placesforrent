@@ -1,0 +1,113 @@
+.property {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px 50px;
+    margin-bottom: 106px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .property {
+        flex-direction: column-reverse;
+    }
+
+    .swiper {
+        width: 100% !important;
+    }
+
+    .details {
+        max-width: 100% !important;
+    }
+}
+
+.swiper {
+    border-radius: 30px;
+    width: 591px;
+    height: 478px;
+}
+
+.slider-button {
+    --swiper-navigation-size: 25px !important;
+    color: black !important;
+    margin: 0px 10px !important;
+}
+
+.property img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+
+    object-fit: cover;
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+.stars {
+    margin-bottom: 36px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.details {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.contact {
+    font-size: 25px;
+    margin-top: 23px;
+}
+
+.price {
+    color: #3f76bf;
+}
+
+.price h2 {
+    font-size: 38px;
+}
+
+.price p {
+    font-size: 25px;
+    margin-top: 2px;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 23px;
+    max-width: 380px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+.contact {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 35px;
+}
+
+.amenities {
+    margin-top: 13px;
+    display: flex;
+    gap: 10px 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.amenities div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.information {
+    margin-top: 106px;
+}
