@@ -52,6 +52,7 @@ form.addEventListener('submit', async (event) => {
     );
 
     const landmark = form.landmark.value;
+    const contact = form.contact.value;
     const moreInfo = form['more-info'].value;
 
     try {
@@ -64,6 +65,7 @@ form.addEventListener('submit', async (event) => {
             price,
             amenities,
             landmark,
+            contact,
             moreInfo,
             images,
         });
