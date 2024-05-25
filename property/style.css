@@ -61,7 +61,7 @@ h1 {
     justify-content: space-between;
 }
 
-.contact {
+#contact-number {
     font-size: 25px;
     margin-top: 23px;
 }
@@ -95,7 +95,7 @@ h4 {
     margin-bottom: 35px;
 }
 
-.amenities {
+#amenities {
     margin-top: 13px;
     display: flex;
     gap: 10px 30px;
@@ -103,7 +103,7 @@ h4 {
     justify-content: flex-start;
 }
 
-.amenities div {
+#amenities div {
     display: flex;
     gap: 5px;
     align-items: center;
