@@ -1,0 +1,76 @@
+import {
+    collection,
+    addDoc,
+} from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js';
+import db from '../firebase/db.js';
+import { uploadImages } from '../utils/upload.js';
+
+const placesCollectionRef = collection(db, 'places');
+
+const form = document.getElementById('new-place');
+const multiSelectHeader = document.querySelector('.multi-select-header');
+const submitButton = document.getElementById('new-place-submit');
+
+function resetMultiSelect() {
+    form.querySelectorAll('[name="amenities[]"]').forEach((input) =>
+        input.remove(),
+    );
+    form.querySelectorAll('.multi-select-header-option').forEach((span) =>
+        span.remove(),
+    );
+
+    const placeholder = document.createElement('span');
+    placeholder.innerText = 'Select amenities';
+    placeholder.className = 'multi-select-header-placeholder';
+    multiSelectHeader.appendChild(placeholder);
+
+    form.querySelectorAll('.multi-select-option').forEach(
+        (option) => (option.className = 'multi-select-option'),
+    );
+    form.querySelectorAll('.multi-select-all').forEach(
+        (option) => (option.className = 'multi-select-all'),
+    );
+}
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    submitButton.disabled = true;
+    submitButton.innerText = 'Loading...';
+
+    const name = form.name.value;
+    const description = form.description.value;
+    const price = form.price.value;
+
+    const amenities = [];
+
+    form.querySelectorAll('[name="amenities[]"]').forEach((input) =>
+        amenities.push(input.value),
+    );
+
+    const landmark = form.landmark.value;
+    const moreInfo = form['more-info'].value;
+
+    try {
+        const images = await uploadImages(form.images.files);
+        await addDoc(placesCollectionRef, {
+            name,
+            description,
+            price,
+            amenities,
+            landmark,
+            moreInfo,
+            images,
+        });
+
+        resetMultiSelect();
+        form.reset();
+        alert('Successfully uploaded place.');
+    } catch (error) {
+        console.error(error);
+        alert(error.message);
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerText = 'Add new place';
+    }
+});

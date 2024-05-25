@@ -35,25 +35,17 @@
         </nav>
 
         <main>
-            <h1 class="league-spartan-bold text-center">Admin Login</h1>
-            <p class="karla gray text-center">
-                Sign in with admin credentials to access administrator controls
-            </p>
-            <form id="login">
-                <div>
-                    <p class="league-spartan-bold">Admin ID</p>
-                    <input type="text" name="admin-id" placeholder="Admin ID" />
-                </div>
-
-                <div>
-                    <p class="league-spartan-bold">Password</p>
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                    />
-                </div>
-            </form>
+            <div>
+                <h1 class="league-spartan-bold text-center">Admin Login</h1>
+                <p class="karla gray text-center">
+                    Sign in with an admin account to access administrator
+                    controls
+                </p>
+                <button id="login-button" class="karla-bold">
+                    <i class="fa-brands fa-google fa-lg"></i>Sign in with Google
+                </button>
+                <p id="error-msg" class="karla"></p>
+            </div>
         </main>
 
         <footer>
@@ -83,5 +75,6 @@
                 </div>
             </div>
         </footer>
+        <script src="./login.js" type="module"></script>
     </body>
 </html>

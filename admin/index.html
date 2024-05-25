@@ -22,6 +22,14 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+
+        <link
+            href="/dependencies/multiselect.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+
+        <script src="./adminAuthorization.js" type="module"></script>
     </head>
     <body>
         <nav>
@@ -34,40 +42,31 @@
             </div>
         </nav>
 
-        <main>
+        <main style="visibility: hidden">
             <h1 class="league-spartan-bold">Admin Dashboard</h1>
 
             <h2 class="league-spartan-bold">Add a new place</h2>
             <form id="new-place">
-                <label class="karla-bold" for="name"
-                    >Name <span class="text-limit gray">(0/80)</span></label
-                >
+                <label class="karla-bold" for="name">Name</label>
                 <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Enter the name of the place or property"
-                    maxlength="80"
                     class="karla"
-                    required
                 />
 
                 <label class="karla-bold" for="description">
                     Short Description
-                    <span class="text-limit gray">(0/200)</span>
                 </label>
                 <textarea
                     id="description"
                     name="description"
                     class="karla"
                     placeholder="Enter a short description"
-                    maxlength="200"
-                    required
                 ></textarea>
 
-                <label class="karla-bold" for="images">
-                    Images <span class="text-limit gray">(0)</span>
-                </label>
+                <label class="karla-bold" for="images"> Images</label>
                 <input
                     id="images"
                     type="file"
@@ -75,7 +74,6 @@
                     class="karla"
                     placeholder="Upload at least 1 (one) image"
                     multiple
-                    required
                 />
 
                 <label class="karla-bold" for="price">Price</label>
@@ -86,14 +84,26 @@
                     placeholder="Enter rent per month"
                     class="karla"
                     min="0"
-                    required
                 />
 
                 <label class="karla-bold" for="amenities">Amenities</label>
-                <select>
-                    <option>Heloo</option>
-                    <option>Heloo2</option>
-                    <option>Heloo3</option>
+                <select
+                    name="amenities"
+                    multiple
+                    data-placeholder="Select amenities"
+                    data-multi-select
+                >
+                    <option>Internet</option>
+                    <option>Water Dispenser</option>
+                    <option>Microwave</option>
+                    <option>AC</option>
+                    <option>Shower</option>
+                    <option>CR</option>
+                    <option>Kitchen</option>
+                    <option>Laundry</option>
+                    <option>CCTV</option>
+                    <option>TV</option>
+                    <option>Refrigerator</option>
                 </select>
 
                 <label class="karla-bold" for="landmark"> Landmark(s) </label>
@@ -103,23 +113,24 @@
                     name="landmark"
                     placeholder="Enter nearest landmark(s)"
                     class="karla"
-                    required
                 />
 
                 <label class="karla-bold" for="more-info">
-                    Short Description
-                    <span class="text-limit gray">(0/500)</span>
+                    More Information
                 </label>
                 <textarea
                     id="more-info"
                     name="more-info"
                     class="karla"
                     placeholder="Enter more information about the place"
-                    maxlength="500"
-                    required
                 ></textarea>
 
-                <input type="submit" value="Add new place" class="karla-bold" />
+                <input
+                    type="submit"
+                    id="new-place-submit"
+                    value="Add new place"
+                    class="karla-bold"
+                />
             </form>
         </main>
 
@@ -150,5 +161,9 @@
                 </div>
             </div>
         </footer>
+
+        <script src="/dependencies/multiselect.js"></script>
+        <script src="/utils/authorization.js" type="module"></script>
+        <script src="./newPlace.js" type="module"></script>
     </body>
 </html>
