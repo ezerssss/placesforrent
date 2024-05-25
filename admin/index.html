@@ -49,6 +49,7 @@
             <form id="new-place">
                 <label class="karla-bold" for="name">Name</label>
                 <input
+                    required
                     type="text"
                     id="name"
                     name="name"
@@ -60,14 +61,23 @@
                     Short Description
                 </label>
                 <textarea
+                    required
                     id="description"
                     name="description"
                     class="karla"
                     placeholder="Enter a short description"
                 ></textarea>
 
+                <label class="karla-bold" for="type">Type</label>
+                <select id="type" name="type" required>
+                    <option value="dorm">Dorm</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                </select>
+
                 <label class="karla-bold" for="images"> Images</label>
                 <input
+                    required
                     id="images"
                     type="file"
                     name="images"
@@ -78,6 +88,7 @@
 
                 <label class="karla-bold" for="price">Price</label>
                 <input
+                    required
                     type="number"
                     id="price"
                     name="price"
@@ -88,6 +99,7 @@
 
                 <label class="karla-bold" for="amenities">Amenities</label>
                 <select
+                    required
                     name="amenities"
                     multiple
                     data-placeholder="Select amenities"
@@ -108,6 +120,7 @@
 
                 <label class="karla-bold" for="landmark"> Landmark(s) </label>
                 <input
+                    required
                     type="text"
                     id="landmark"
                     name="landmark"
@@ -119,6 +132,7 @@
                     More Information
                 </label>
                 <textarea
+                    required
                     id="more-info"
                     name="more-info"
                     class="karla"

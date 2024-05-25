@@ -23,6 +23,7 @@ label {
 
 input[type='text'],
 input[type='number'],
+select,
 textarea {
     width: 100%;
     border: 1px solid #001128 !important;
@@ -31,7 +32,8 @@ textarea {
     margin-bottom: 25px !important;
 }
 
-.multi-select {
+.multi-select,
+select {
     font-family: 'Karla', sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
