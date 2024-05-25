@@ -6,6 +6,8 @@ import db from './firebase/db.js';
 
 const placesCollectionRef = collection(db, 'places');
 
+const placesContainer = document.getElementById('places');
+
 window.addEventListener('load', async () => {
     const places = [];
 
@@ -15,5 +17,8 @@ window.addEventListener('load', async () => {
         places.push(doc.data());
     });
 
-    console.log(places);
+    places.forEach((place) => {
+        const aWrapper = document.createElement('a');
+        aWrapper.href = `/property/?id=`;
+    });
 });
