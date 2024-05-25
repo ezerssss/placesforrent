@@ -41,6 +41,7 @@ form.addEventListener('submit', async (event) => {
 
     const name = form.name.value;
     const description = form.description.value;
+    const address = form.address.value;
     const type = form.type.value;
     const price = form.price.value;
 
@@ -58,6 +59,7 @@ form.addEventListener('submit', async (event) => {
         const docRef = await addDoc(placesCollectionRef, {
             name,
             description,
+            address,
             type,
             price,
             amenities,
