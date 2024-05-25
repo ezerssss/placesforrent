@@ -137,14 +137,24 @@
                     class="karla"
                 />
 
-                <label class="karla-bold" for="landmark">
-                    Contact Person
-                </label>
+                <label class="karla-bold" for="contact"> Contact Person </label>
                 <input
                     required
                     type="text"
                     id="contact"
                     name="contact"
+                    placeholder="Enter Contact Person"
+                    class="karla"
+                />
+
+                <label class="karla-bold" for="contact-number">
+                    Contact Number
+                </label>
+                <input
+                    required
+                    type="text"
+                    id="contact-number"
+                    name="contact-number"
                     placeholder="Enter Contact Person"
                     class="karla"
                 />
@@ -159,6 +169,18 @@
                     class="karla"
                     placeholder="Enter more information about the place"
                 ></textarea>
+
+                <label class="karla-bold" for="rating">Rating</label>
+                <input
+                    required
+                    type="number"
+                    id="rating"
+                    name="rating"
+                    placeholder="Enter initial rating (0 - 5)"
+                    class="karla"
+                    min="0"
+                    max="5"
+                />
 
                 <input
                     type="submit"

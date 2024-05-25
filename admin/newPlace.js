@@ -53,7 +53,9 @@ form.addEventListener('submit', async (event) => {
 
     const landmark = form.landmark.value;
     const contact = form.contact.value;
+    const contactNumber = form['contact-number'].value;
     const moreInfo = form['more-info'].value;
+    const rating = form.rating.value;
 
     try {
         const images = await uploadImages(form.images.files);
@@ -66,7 +68,9 @@ form.addEventListener('submit', async (event) => {
             amenities,
             landmark,
             contact,
+            contactNumber,
             moreInfo,
+            rating,
             images,
         });
 
