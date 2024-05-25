@@ -45,36 +45,26 @@
             <section class="property">
                 <div class="details">
                     <header>
-                        <div class="stars">
-                            <i class="fa-solid fa-2x fa-star"></i>
-                            <i class="fa-solid fa-2x fa-star"></i>
-                            <i class="fa-solid fa-2x fa-star"></i>
-                            <i class="fa-solid fa-2x fa-star"></i>
+                        <div id="stars">
+                            <i class="fa-regular fa-2x fa-star"></i>
+                            <i class="fa-regular fa-2x fa-star"></i>
+                            <i class="fa-regular fa-2x fa-star"></i>
+                            <i class="fa-regular fa-2x fa-star"></i>
                             <i class="fa-regular fa-2x fa-star"></i>
                         </div>
-                        <h1 class="league-spartan-bold">Holwan Lampirong</h1>
-                        <p class="karla gray">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Quia, ullam. Eius voluptates tempora nesciunt
-                            nobis vel quasi accusamus enim veniam.
+                        <h1 id="name" class="league-spartan-bold">--------</h1>
+                        <p id="description" class="karla gray">----------</p>
+                        <p id="contact-number" class="league-spartan-bold">
+                            --- ---------
                         </p>
-                        <p class="league-spartan-bold contact">+63 912345678</p>
                     </header>
                     <div class="price league-spartan-bold">
-                        <h2>Php 10,000</h2>
+                        <h2 id="price">Php ------</h2>
                         <p>rent per month</p>
                     </div>
                 </div>
                 <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"></div>
-                        <div class="swiper-slide">
-                            <img
-                                alt="holwan"
-                                src="https://via.placeholder.com/200x300"
-                            />
-                        </div>
-                    </div>
+                    <div id="images" class="swiper-wrapper"></div>
                     <div class="swiper-button-prev slider-button"></div>
                     <div class="swiper-button-next slider-button"></div>
                 </div>
@@ -84,70 +74,20 @@
                     Important information about this place
                 </h3>
                 <div class="contact">
-                    <h4 class="karla-bold gray">Contact: Divina Punongbayan</h4>
-                    <h4 class="karla-bold gray">Landmark: Trike Area, Gym</h4>
+                    <h4 id="contact-name" class="karla-bold gray">
+                        Contact: ---
+                    </h4>
+                    <h4 id="landmark" class="karla-bold gray">Landmark: ---</h4>
                 </div>
 
                 <h4 class="karla-bold gray">Amenities:</h4>
-                <div class="amenities karla gray">
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                    <div>
-                        <i class="fa-regular fa-circle-check"></i>Et optio
-                        voluptatem
-                    </div>
-                </div>
+                <div id="amenities" class="karla gray">----</div>
             </section>
             <section class="information">
                 <h3 class="league-spartan-bold">
                     More information from the landlord
                 </h3>
-                <p class="karla gray">
-                    Et optio voluptatem et illo praesentium etesse fuga ab sunt
-                    aspernatur. Vel iste quos ut molestiae dolorem ea nobis
-                    dicta eum quam galisum. Vel iste quos ut molestiae dolorem
-                    ea nobis dicta eum quam galisum. Et optio voluptatem et illo
-                    praesentium etesse fuga ab sunt aspernatur. Vel iste quos ut
-                    molestiae dolorem ea nobis dicta eum quam galisum. Vel iste
-                    quos ut molestiae dolorem ea nobis dicta eum quam galisum.
-                    Et optio voluptatem et illo praesentium etesse fuga ab sunt
-                    aspernatur. Vel iste quos ut molestiae dolorem ea nobis
-                    dicta eum quam galisum. Vel iste quos ut molestiae dolorem
-                    ea nobis dicta eum quam galisum. Et optio voluptatem et illo
-                    praesentium etesse fuga ab sunt aspernatur. Vel iste quos ut
-                    molestiae dolorem ea nobis dicta eum quam galisum. Vel iste
-                    quos ut molestiae dolorem ea nobis dicta eum quam galisum.
-                </p>
+                <p id="more-info" class="karla gray">----</p>
             </section>
         </main>
 
@@ -178,25 +118,6 @@
                 </div>
             </div>
         </footer>
-
-        <script>
-            const swiper = new Swiper('.swiper', {
-                loop: true,
-
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-            });
-
-            const images = document.querySelectorAll('.swiper img');
-
-            for (const image of images) {
-                image.addEventListener('click', () => {
-                    image.requestFullscreen();
-                });
-            }
-        </script>
 
         <script src="/utils/authorization.js" type="module"></script>
         <script src="./index.js" type="module"></script>
