@@ -1,6 +1,7 @@
 import {
     collection,
     addDoc,
+    updateDoc,
 } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js';
 import db from '../firebase/db.js';
 import { uploadImages } from '../utils/upload.js';
@@ -36,10 +37,11 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     submitButton.disabled = true;
-    submitButton.innerText = 'Loading...';
+    submitButton.value = 'Loading...';
 
     const name = form.name.value;
     const description = form.description.value;
+    const type = form.type.value;
     const price = form.price.value;
 
     const amenities = [];
@@ -53,15 +55,18 @@ form.addEventListener('submit', async (event) => {
 
     try {
         const images = await uploadImages(form.images.files);
-        await addDoc(placesCollectionRef, {
+        const docRef = await addDoc(placesCollectionRef, {
             name,
             description,
+            type,
             price,
             amenities,
             landmark,
             moreInfo,
             images,
         });
+
+        await updateDoc(docRef, { id: docRef.id });
 
         resetMultiSelect();
         form.reset();
@@ -71,6 +76,6 @@ form.addEventListener('submit', async (event) => {
         alert(error.message);
     } finally {
         submitButton.disabled = false;
-        submitButton.innerText = 'Add new place';
+        submitButton.value = 'Add new place';
     }
 });
