@@ -23,20 +23,23 @@ label {
 
 input[type='text'],
 input[type='number'],
-select,
 textarea {
     width: 100%;
     border: 1px solid #001128 !important;
-    border-radius: 8px;
-    padding: 14px 16px;
-    margin-bottom: 25px;
+    border-radius: 8px !important;
+    padding: 14px 16px !important;
+    margin-bottom: 25px !important;
 }
 
-option {
+.multi-select {
     font-family: 'Karla', sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
+}
+
+.amenities {
+    margin-bottom: 25px;
 }
 
 input[type='file'] {
