@@ -1,6 +1,7 @@
 import {
     collection,
     addDoc,
+    updateDoc,
 } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js';
 import db from '../firebase/db.js';
 import { uploadImages } from '../utils/upload.js';
@@ -54,7 +55,7 @@ form.addEventListener('submit', async (event) => {
 
     try {
         const images = await uploadImages(form.images.files);
-        await addDoc(placesCollectionRef, {
+        const docRef = await addDoc(placesCollectionRef, {
             name,
             description,
             type,
@@ -64,6 +65,8 @@ form.addEventListener('submit', async (event) => {
             moreInfo,
             images,
         });
+
+        await updateDoc(docRef, { id: docRef.id });
 
         resetMultiSelect();
         form.reset();
