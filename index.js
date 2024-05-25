@@ -13,7 +13,8 @@ const placesContainer = document.getElementById('places');
 window.addEventListener('load', async () => {
     const places = [];
 
-    const q = query(placesCollectionRef, where('type', '==', 'dorm'));
+    // const q = query(placesCollectionRef, where('type', '==', 'dorm'));
+    const q = query(placesCollectionRef);
 
     const snapshot = await getDocs(q);
 
