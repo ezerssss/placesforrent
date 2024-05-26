@@ -4,6 +4,7 @@ import {
     getDoc,
     doc,
     updateDoc,
+    deleteDoc,
 } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js';
 import db from '../firebase/db.js';
 import { uploadImages } from '../utils/upload.js';
@@ -125,6 +126,22 @@ async function handleEdit(id) {
     }
 }
 
+async function handleDelete(id) {
+    const confirmDelete = confirm("Are you sure you want to delete this place?")
+    if (confirmDelete) {
+        try {
+            const docRef = doc(db, 'places', id);
+            await deleteDoc(docRef);
+            alert('Successfully deleted place.');
+        } catch (error) {
+            console.error(error);
+            alert(error.message);
+        }
+    } else {
+        return;
+    }
+}
+
 const unsubscribe = onSnapshot(placesCollectionRef, (snapshot) => {
     const places = [];
 
@@ -157,6 +174,8 @@ const unsubscribe = onSnapshot(placesCollectionRef, (snapshot) => {
         const deleteButton = document.createElement('button');
         deleteButton.innerText = 'Delete';
         deleteButton.className = 'delete karla-bold';
+
+        deleteButton.addEventListener('click', () => handleDelete(place.id));
 
         actionWrapper.appendChild(editButton);
         actionWrapper.appendChild(deleteButton);
