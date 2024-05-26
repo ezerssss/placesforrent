@@ -89,6 +89,46 @@
                 </h3>
                 <p id="more-info" class="karla gray">----</p>
             </section>
+            <section>
+                <h3 class="league-spartan-bold">Comments</h3>
+                <form id="comment">
+                    <div class="karla">
+                        <input
+                            required
+                            disabled
+                            type="text"
+                            placeholder="Enter comment"
+                            class="karla"
+                            name="comment"
+                        />
+                        <span class="karla" id="tooltip-text">
+                            You need to be logged-in to comment.
+                        </span>
+
+                        <label for="rating">Stars: </label>
+                        <select
+                            class="karla"
+                            id="rating"
+                            disabled
+                            name="rating"
+                        >
+                            <option selected value="5">5 stars</option>
+                            <option value="4">4 stars</option>
+                            <option value="3">3 stars</option>
+                            <option value="2">2 stars</option>
+                            <option value="1">1 star</option>
+                        </select>
+                    </div>
+
+                    <button disabled type="submit">
+                        <i
+                            class="fa fa-paper-plane fa-2x"
+                            aria-hidden="true"
+                        ></i>
+                    </button>
+                </form>
+                <div id="comments"></div>
+            </section>
         </main>
 
         <footer>
@@ -121,5 +161,6 @@
 
         <script src="/utils/authorization.js" type="module"></script>
         <script src="./index.js" type="module"></script>
+        <script src="./comment.js" type="module"></script>
     </body>
 </html>
