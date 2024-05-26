@@ -64,13 +64,13 @@ form.addEventListener('submit', async (event) => {
             description,
             address,
             type,
-            price,
+            price: parseInt(price),
             amenities,
             landmark,
             contact,
             contactNumber,
             moreInfo,
-            rating,
+            rating: parseInt(rating),
             images,
         });
 
