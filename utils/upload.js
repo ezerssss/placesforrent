@@ -7,9 +7,19 @@ import {
 import storage from '../firebase/storage.js';
 
 export async function uploadImages(files) {
+    const uploadedFileUrls = [];
     const uploadPromises = [];
 
     for (const file of files) {
+        // File is already uploaded
+        if (
+            typeof file === 'string' &&
+            file.includes('https://firebasestorage.googleapis.com/')
+        ) {
+            uploadedFileUrls.push(file);
+            continue;
+        }
+
         const imageRef = ref(storage, `images/${file.name}-${uuidv4()}`);
 
         uploadPromises.push(uploadBytes(imageRef, file));
@@ -23,5 +33,7 @@ export async function uploadImages(files) {
         urlPromises.push(getDownloadURL(snapshot.ref));
     }
 
-    return await Promise.all(urlPromises);
+    const newUrls = await Promise.all(urlPromises);
+
+    return [...uploadedFileUrls, ...newUrls];
 }

@@ -30,14 +30,33 @@ textarea {
     border-radius: 8px !important;
     padding: 14px 16px !important;
     margin-bottom: 25px !important;
+    overflow: hidden;
 }
 
-.multi-select,
-select {
+.ms-choice {
+    padding: 14px 16px !important;
+    height: auto !important;
+}
+
+.ms-choice span {
+    position: relative !important;
+    padding: 0 !important;
     font-family: 'Karla', sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
+}
+
+.ms-parent,
+option {
+    font-family: 'Karla', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.ms-parent {
+    margin-bottom: 25px !important;
 }
 
 .amenities {
@@ -64,4 +83,43 @@ input[type='submit'] {
 
 #more-info {
     height: 120px;
+}
+
+#places {
+    border: 1px solid #001128;
+    border-radius: 10px;
+    margin: 80px 0px 0px;
+}
+
+#places > * {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin: 20px 0px;
+}
+
+#places header {
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+}
+
+.edit,
+.delete {
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin: 0px 5px;
+}
+
+.edit {
+    border: 1px solid #001128;
+    color: #001128;
+}
+
+.delete {
+    background-color: red;
+    color: white;
 }
