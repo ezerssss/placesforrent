@@ -83,6 +83,12 @@ input[type='submit'] {
     cursor: pointer;
 }
 
+button:disabled,
+input[type='button']:disabled,
+input[type='submit']:disabled {
+    cursor: default;
+}
+
 input[type='text'],
 input[type='password'],
 input[type='number'],

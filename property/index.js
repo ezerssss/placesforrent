@@ -32,11 +32,11 @@ window.addEventListener('load', async () => {
 
     stars.innerHTML = '';
 
-    for (let i = 0; i < place.rating; i++) {
+    for (let i = 0; i < Math.floor(place.rating); i++) {
         stars.innerHTML += '<i class="fa-solid fa-2x fa-star"></i>';
     }
 
-    for (let i = 0; i < 5 - place.rating; i++) {
+    for (let i = 0; i < 5 - Math.floor(place.rating); i++) {
         stars.innerHTML += '<i class="fa-regular fa-2x fa-star"></i>';
     }
 

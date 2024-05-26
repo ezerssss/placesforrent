@@ -115,5 +115,87 @@ h4 {
 }
 
 .information {
-    margin-top: 106px;
+    margin: 106px 0px;
+}
+
+form {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#tooltip-text {
+    visibility: hidden;
+    width: fit-content;
+    font-size: 12px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+    position: absolute;
+    top: -25px;
+    left: 0;
+    z-index: 1;
+}
+
+form:hover input:disabled + #tooltip-text {
+    visibility: visible;
+}
+
+form > div {
+    flex: 1;
+    max-width: 1000px;
+}
+
+input[type='text'] {
+    border-bottom: 1px solid gray !important;
+    padding: 5px 10px;
+    font-size: 17px;
+    width: 100%;
+    display: block;
+}
+
+#comments {
+    margin-top: 30px;
+}
+
+#comments > div {
+    margin-bottom: 50px;
+}
+
+.email {
+    font-size: 13px;
+    color: gray;
+}
+
+select {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+option {
+    font-size: 15px;
+}
+
+#comments .stars {
+    font-size: 8px;
+    margin: 6px 0px 15px;
+}
+
+.comment {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment button {
+    color: red;
 }
