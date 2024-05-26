@@ -44,14 +44,14 @@
             </header>
             <section class="search">
                 <h2 class="league-spartan-bold">Find your next place here</h2>
-                <form action="" method="post" class="search-form">
+                <form id="query" action="" method="post" class="search-form">
                     <div class="query">
                         <input
                             type="text"
-                            name="query"
+                            name="search"
+                            id="search-element"
                             class="karla"
                             placeholder="Search for a place"
-                            required
                         />
                         <button type="submit" name="submit">
                             <i
@@ -68,7 +68,6 @@
                                     name="filter1"
                                     id="filter1"
                                     value="Dorm"
-                                    checked
                                 />
                                 <label for="filter1">Dorm</label>
                             </div>
@@ -93,14 +92,13 @@
                         </div>
                         <div class="sorting">
                             <span>Sort by:</span>
-                            <select>
-                                <option value="price-asc">
+                            <select id="order">
+                                <option value="price-asc" selected>
                                     Price: Lowest First
                                 </option>
                                 <option value="price-desc">
                                     Price: Highest First
                                 </option>
-                                <option value="date">Date Listed</option>
                             </select>
                         </div>
                     </div>
@@ -157,5 +155,6 @@
 
         <script src="/utils/authorization.js" type="module"></script>
         <script src="./index.js" type="module"></script>
+        <script src="./query.js" type="module"></script>
     </body>
 </html>
