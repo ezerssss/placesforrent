@@ -9,32 +9,16 @@ import { uploadImages } from '../utils/upload.js';
 const placesCollectionRef = collection(db, 'places');
 
 const form = document.getElementById('new-place');
-const multiSelectHeader = document.querySelector('.multi-select-header');
-const submitButton = document.getElementById('new-place-submit');
+const formTitle = document.getElementById('form-title');
 
-function resetMultiSelect() {
-    form.querySelectorAll('[name="amenities[]"]').forEach((input) =>
-        input.remove(),
-    );
-    form.querySelectorAll('.multi-select-header-option').forEach((span) =>
-        span.remove(),
-    );
-
-    const placeholder = document.createElement('span');
-    placeholder.innerText = 'Select amenities';
-    placeholder.className = 'multi-select-header-placeholder';
-    multiSelectHeader.appendChild(placeholder);
-
-    form.querySelectorAll('.multi-select-option').forEach(
-        (option) => (option.className = 'multi-select-option'),
-    );
-    form.querySelectorAll('.multi-select-all').forEach(
-        (option) => (option.className = 'multi-select-all'),
-    );
-}
+const submitButton = document.getElementById('submit');
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
+
+    if (formTitle.innerText !== 'Add a new place') {
+        return;
+    }
 
     submitButton.disabled = true;
     submitButton.value = 'Loading...';
@@ -44,13 +28,10 @@ form.addEventListener('submit', async (event) => {
     const address = form.address.value;
     const type = form.type.value;
     const price = form.price.value;
-
-    const amenities = [];
-
-    form.querySelectorAll('[name="amenities[]"]').forEach((input) =>
-        amenities.push(input.value),
-    );
-
+    const amenities = $('#multi-select')
+        .multipleSelect('getData')
+        .filter((option) => option.selected)
+        .map((option) => option.value);
     const landmark = form.landmark.value;
     const contact = form.contact.value;
     const contactNumber = form['contact-number'].value;
@@ -58,7 +39,10 @@ form.addEventListener('submit', async (event) => {
     const rating = form.rating.value;
 
     try {
-        const images = await uploadImages(form.images.files);
+        const images = await uploadImages(
+            pond.getFiles().map((pondFile) => pondFile.file),
+        );
+
         const docRef = await addDoc(placesCollectionRef, {
             name,
             description,
@@ -76,8 +60,9 @@ form.addEventListener('submit', async (event) => {
 
         await updateDoc(docRef, { id: docRef.id });
 
-        resetMultiSelect();
         form.reset();
+        $('#multi-select').multipleSelect('uncheckAll');
+        pond.removeFiles();
         alert('Successfully uploaded place.');
     } catch (error) {
         console.error(error);

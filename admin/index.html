@@ -24,9 +24,13 @@
         />
 
         <link
-            href="/dependencies/multiselect.css"
             rel="stylesheet"
-            type="text/css"
+            href="https://unpkg.com/multiple-select@1.7.0/dist/multiple-select.min.css"
+        />
+
+        <link
+            href="https://unpkg.com/filepond/dist/filepond.css"
+            rel="stylesheet"
         />
 
         <script src="./adminAuthorization.js" type="module"></script>
@@ -45,7 +49,7 @@
         <main style="visibility: hidden">
             <h1 class="league-spartan-bold">Admin Dashboard</h1>
 
-            <h2 class="league-spartan-bold">Add a new place</h2>
+            <h2 id="form-title" class="league-spartan-bold">Add a new place</h2>
             <form id="new-place">
                 <label class="karla-bold" for="name">Name</label>
                 <input
@@ -90,7 +94,7 @@
                     id="images"
                     type="file"
                     name="images"
-                    class="karla"
+                    class="karla filepond"
                     placeholder="Upload at least 1 (one) image"
                     multiple
                 />
@@ -108,11 +112,10 @@
 
                 <label class="karla-bold" for="amenities">Amenities</label>
                 <select
-                    required
                     name="amenities"
-                    multiple
-                    data-placeholder="Select amenities"
-                    data-multi-select
+                    multiple="multiple"
+                    id="multi-select"
+                    required
                 >
                     <option>Internet</option>
                     <option>Water Dispenser</option>
@@ -183,12 +186,25 @@
                 />
 
                 <input
+                    required
                     type="submit"
-                    id="new-place-submit"
+                    id="submit"
                     value="Add new place"
                     class="karla-bold"
                 />
+                <button
+                    id="cancel"
+                    type="button"
+                    class="karla-bold delete"
+                    style="display: none"
+                >
+                    Cancel
+                </button>
             </form>
+
+            <section>
+                <div id="places"></div>
+            </section>
         </main>
 
         <footer>
@@ -219,8 +235,26 @@
             </div>
         </footer>
 
-        <script src="/dependencies/multiselect.js"></script>
+        <script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+        <script>
+            const imageUpload = document.getElementById('images');
+            const pond = FilePond.create(imageUpload, { allowReorder: true });
+        </script>
+
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/multiple-select@1.7.0/dist/multiple-select.min.js"></script>
+        <script>
+            $('#multi-select').multipleSelect({
+                placeholder: 'Select amenities',
+            });
+        </script>
+
         <script src="/utils/authorization.js" type="module"></script>
         <script src="./newPlace.js" type="module"></script>
+        <script src="./editPlace.js" type="module"></script>
     </body>
 </html>
