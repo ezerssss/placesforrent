@@ -90,11 +90,11 @@ const unsubscribe = onSnapshot(commentsCollectionRef, (snapshot) => {
     snapshot.docs.forEach((doc) => {
         const comment = doc.data();
 
-        if (comment.uid === user.uid) {
+        if (comment.uid === user?.uid) {
             hasRated = true;
         }
 
-        isOwnComment = comment.uid === user.uid;
+        isOwnComment = comment.uid === user?.uid;
 
         let starsDisplay = '';
 
